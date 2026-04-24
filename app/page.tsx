@@ -1,46 +1,34 @@
+import { GlobeExperience } from "@/components/GlobeExperience";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 px-6 py-16 text-zinc-100">
-      <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 rounded-3xl border border-zinc-800 bg-zinc-900/90 p-8 shadow-2xl shadow-black/20">
-        <header className="space-y-2">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-400">
-            Built automatically
-          </p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Jeffbot Todo App
-          </h1>
-          <p className="text-base text-zinc-400">
-            A simple starter UI for adding tasks.
-          </p>
+    <main className="relative min-h-screen overflow-hidden bg-[#020617] text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,#1d4ed833,transparent_35%),radial-gradient(circle_at_20%_80%,#7c3aed22,transparent_32%),linear-gradient(180deg,#020617_0%,#01030a_100%)]" />
+
+      <div className="relative z-10 flex min-h-screen flex-col justify-between px-6 py-8 sm:px-10 lg:px-16">
+        <header className="max-w-2xl space-y-5 pt-4 sm:pt-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.35em] text-cyan-200/90 backdrop-blur">
+            Orbital Atlas
+          </div>
+          <div className="space-y-4">
+            <h1 className="max-w-xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Earth, from just far enough away to feel unreal.
+            </h1>
+            <p className="max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
+              Swipe the planet, drift a little closer, and let the atmosphere, cloud bands, and stars do the rest.
+            </p>
+          </div>
         </header>
 
-        <section className="space-y-4">
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <input
-              type="text"
-              placeholder="Enter a task"
-              className="h-12 flex-1 rounded-2xl border border-zinc-700 bg-zinc-950 px-4 text-zinc-100 outline-none ring-0 placeholder:text-zinc-500 focus:border-cyan-400"
-            />
-            <button
-              type="button"
-              className="h-12 rounded-2xl bg-cyan-400 px-6 font-semibold text-zinc-950 transition hover:bg-cyan-300"
-            >
-              Add Task
-            </button>
-          </div>
+        <div className="relative flex flex-1 items-center justify-center py-8 sm:py-0">
+          <GlobeExperience />
+        </div>
 
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
-            <p className="mb-3 text-sm font-medium text-zinc-400">Task List</p>
-            <ul className="space-y-3">
-              <li className="flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3">
-                <span className="text-zinc-100">Ship the first version</span>
-                <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300">
-                  Static item
-                </span>
-              </li>
-            </ul>
-          </div>
-        </section>
+        <footer className="relative z-10 flex flex-col gap-3 pb-2 text-xs uppercase tracking-[0.28em] text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <span>Drag / swipe to rotate</span>
+          <span>Scroll / pinch for gentle zoom</span>
+          <span>Procedural planet • realtime rendering</span>
+        </footer>
       </div>
     </main>
   );
